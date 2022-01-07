@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>recipes</ion-title>
+    <ion-title>Recipes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <!-- we use ion tag instaed of html default tag for better css -->
+  <ion-list>
+    <!-- render recipes here we define it in model -->
+    <ion-item *ngFor="let recipe of recipes">
+      <ion-avatar slot="start">
+        <!-- compnonent which wrap the ion image -->
+        <ion-img [src]="recipe.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label> {{recipe.title}} </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
