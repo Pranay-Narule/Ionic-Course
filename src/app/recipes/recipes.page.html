@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Recipes</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,12 +8,6 @@
   <!-- we use ion tag instaed of html default tag for better css -->
   <ion-list>
     <!-- render recipes here we define it in model -->
-    <ion-item *ngFor="let recipe of recipes">
-      <ion-avatar slot="start">
-        <!-- compnonent which wrap the ion image -->
-        <ion-img [src]="recipe.imageUrl"></ion-img>
-      </ion-avatar>
-      <ion-label> {{recipe.title}} </ion-label>
-    </ion-item>
+      <app-recipe-item *ngFor="let recipe of recipes" [recipeItem]="recipe"></app-recipe-item>
   </ion-list>
 </ion-content>
